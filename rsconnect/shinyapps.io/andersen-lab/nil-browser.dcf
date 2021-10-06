@@ -1,0 +1,13 @@
+name: nil-browser
+title: nil-browser
+username:
+account: andersen-lab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4794472
+bundleId: 5103649
+url: https://andersen-lab.shinyapps.io/nil-browser/
+when: 1633377978.12986
+lastSyncTime: 1633377978.12987
+asMultiple: FALSE
+asStatic: FALSE
