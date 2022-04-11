@@ -5,9 +5,9 @@ account: andersen-lab
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4794472
-bundleId: 5103649
+bundleId: 5255635
 url: https://andersen-lab.shinyapps.io/nil-browser/
-when: 1633377978.12986
-lastSyncTime: 1633377978.12987
+when: 1637014032.02905
+lastSyncTime: 1637014032.02906
 asMultiple: FALSE
 asStatic: FALSE

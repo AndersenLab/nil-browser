@@ -207,6 +207,15 @@ nil_plot <- function(data, chr, left.cb = 0, left.n2 = 0, left.bound = 0, right.
       nils2 <- nilsII %>%
         dplyr::mutate(chrom = paste0("chr", chrom))
       
+      # check to see if NIL type is specified
+      if(section == "N2-NILs") {
+        bg <- bg %>%
+          dplyr::filter(nil_type == "N2")
+      } else if(section == "CB-NILs") {
+        bg <- bg %>%
+          dplyr::filter(nil_type == "CB")
+      }
+      
       # background plot
       bgplot <- ggplot(bg)+
         geom_segment(aes(x = start/1e6, y = factor(sample, levels = levels(nils2$sample)), xend = end/1e6, yend = sample, color = gt_name, size = 2))+
@@ -229,7 +238,7 @@ nil_plot <- function(data, chr, left.cb = 0, left.n2 = 0, left.bound = 0, right.
   
   # only plot the N2-NILs
   if(section == "N2-NILs") {
-    nl.pl <- ggplot(nilsII %>% dplyr::filter(nil_type == "CB"))+
+    nl.pl <- ggplot(nilsII %>% dplyr::filter(nil_type == "N2"))+
       geom_segment(aes(x = start/1e6, y = sample, xend = end/1e6, yend = sample, color = gt_name, size = 2))+
       facet_grid(~chrom, scales = "free",  space = "free")+
       scale_color_manual(values=c("N2"=n2_color,"CB4856"=cb_color, "unknown" = "grey"))+

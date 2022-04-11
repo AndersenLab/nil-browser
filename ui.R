@@ -18,10 +18,8 @@ shinyUI(fluidPage(
     # Sidebar with a slider input for number of bins
     sidebarLayout(
         sidebarPanel(
-            shiny::radioButtons("chr_input", "Chrom:", choices = c("I", "II", "III", "IV", "V", "X"), selected = "V", inline = T),
-            shiny::uiOutput("positions"),
-            shiny::checkboxInput("eca_only", "ECA strains only?", value = FALSE), 
-            downloadButton('downloadData', "Download data")
+            shiny::radioButtons("select_option", "Do you want to:", choices = c("Explore NILs", "Plot specific NILs"), selected = "Explore NILs", inline = T),
+            shiny::uiOutput("choose_type")
         ),
 
         # Show a plot of the generated distribution
